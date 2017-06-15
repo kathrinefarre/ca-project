@@ -12,6 +12,7 @@ node {
    stage('Test') {
       if (isUnix()) {
 	sh "python tests.py"
+        sh "python test_curl_docker.py"
       }
       //archive 'target/*.jar'
    }   
