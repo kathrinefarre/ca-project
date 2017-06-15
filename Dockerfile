@@ -10,7 +10,7 @@ RUN apt-get install -y python-pip python-dev build-essential
 
 # Somehow copy the app to Docker
 RUN mkdir /usr/src/ca-project
-COPY * /usr/src/ca-project/
+COPY ./ /usr/src/ca-project/
 
 RUN pip install -r /usr/src/ca-project/requirements.txt
 
@@ -18,3 +18,4 @@ RUN pip install -r /usr/src/ca-project/requirements.txt
 EXPOSE 5000
 
 # Add a default command for this image
+CMD ["python", "/usr/src/ca-project/run.py"]
