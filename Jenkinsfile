@@ -9,7 +9,7 @@ node {
    stage('Build') {
 	echo 'Nothing to build'
    }   
-   stage('Results') {
+   stage('Test') {
       if (isUnix()) {
 	sh "python tests.py"
       }
