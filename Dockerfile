@@ -7,10 +7,12 @@ FROM ubuntu:16.04
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
 
-#RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
 # Somehow copy the app to Docker
-#COPY app.py /usr/src/app/
+RUN mkdir /usr/src/ca-project
+COPY * /usr/src/ca-project/
+
+RUN pip install -r /usr/src/ca-project/requirements.txt
 
 # Add a default port containers from this image should expose
 EXPOSE 5000
